@@ -42,7 +42,7 @@ const DotMatrix: React.FC<DotMatrixProps> = ({
   dotSize,
   animationSpeed,
 }) => {
-  const ref = useRef<any>();
+  const ref = useRef<any>(null);
   const size = useThree((state: any) => state.size);
 
   const shaderMaterial = useMemo(() => {
