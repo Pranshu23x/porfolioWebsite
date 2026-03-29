@@ -65,3 +65,5 @@ export default function PortfolioContent({ content }: { content: MarkdownContent
     </>
   );
 }
+
+// Final Build Ready
