@@ -127,7 +127,14 @@ export const CanvasRevealWrapper = (props: CanvasRevealEffectProps) => {
     <div className="absolute inset-0 -z-10 pointer-events-none bg-black overflow-hidden">
       <Canvas
         camera={{ position: [0, 0, 1], fov: 90 }}
-        dpr={[1, 2]}
+        dpr={1}
+        gl={{ 
+          antialias: false, 
+          powerPreference: "high-performance",
+          alpha: true,
+          stencil: false,
+          depth: false
+        }}
       >
         <CanvasRevealEffect {...props} />
       </Canvas>

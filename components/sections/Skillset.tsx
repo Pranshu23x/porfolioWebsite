@@ -81,7 +81,7 @@ export default function Skillset({ skillset }: SkillsetProps) {
         <div className="mb-16 md:mb-24 px-4">
           <h2 className="text-[8vw] md:text-[5vw] font-extralight uppercase tracking-tighter leading-[0.85] text-white">
             Architecture <br /> 
-            <span className="text-white/20 italic font-serif">& Core Signals</span>
+            <span className="text-white/20 font-serif">& Core Signals</span>
           </h2>
         </div>
 

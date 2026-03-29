@@ -60,7 +60,7 @@ const ProjectRow = ({
         
         <div className="space-y-4">
           <Link href={url} target="_blank" className="block w-fit group/title">
-            <h3 className="text-7xl md:text-9xl font-serif italic leading-none tracking-tighter group-hover/title:text-white transition-all duration-700 hover:translate-x-4">
+            <h3 className="text-7xl md:text-9xl font-serif leading-none tracking-tighter group-hover/title:text-white transition-all duration-700 hover:translate-x-4">
               {title}
             </h3>
           </Link>
@@ -130,7 +130,7 @@ export default function FeaturedProjects() {
         <div className="space-y-8 max-w-4xl px-4">
           <h2 className="text-[10vw] md:text-[8vw] font-extralight uppercase leading-none tracking-tighter">
             My <br />
-            <span className="text-white/20 italic font-serif">Projects</span>
+            <span className="text-white/20 font-serif">Projects</span>
           </h2>
           <p className="text-xl md:text-2xl font-light text-white/40 leading-relaxed max-w-xl">
             Engineering real-world systems with total ownership. Designed for users, optimized for impact.
@@ -155,7 +155,7 @@ export default function FeaturedProjects() {
             title="RippleCode"
             tagline="DevTools Infrastructure"
             problem="Developer workflow friction and context switching."
-            solution="System designed to streamline coding cycles with intelligent context injection."
+            solution="Built a thing that converts entire repos into compressed XML so LLMs can actually understand them. Like giving AI glasses lol."
             url="https://www.ripplecode.site/"
             imageUrl="https://i.ibb.co/Wp7xPh55/image.png"
             outcome="250+ developers actively using it"
@@ -166,10 +166,10 @@ export default function FeaturedProjects() {
             title="AskTabs"
             tagline="Contextual Retrieval"
             problem="Retrieval Augmented Generation with poor document context awareness."
-            solution="Optimized retrieval layer for browser-level workspace intelligence."
+            solution="Chrome extension that lets you search and ask questions across all your open tabs. Uses Chrome's native AI APIs so your data never leaves your browser."
             url="https://chromewebstore.google.com/detail/asktabs/edgkopkoeamacnokbnknnlbahpijldhc?hl=en"
             imageUrl="https://i.ibb.co/QFstgjqk/image.png"
-            outcome="Winner of Gemini Hackathon 2024"
+            outcome="Winner of Gemini Hackathon 2025"
             index={2}
           />
 
