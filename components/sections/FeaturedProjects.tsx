@@ -130,7 +130,7 @@ export default function FeaturedProjects() {
         <div className="space-y-8 max-w-4xl px-4">
           <h2 className="text-[10vw] md:text-[8vw] font-extralight uppercase leading-none tracking-tighter">
             My <br />
-            <span className="text-white/20 font-serif">Projects</span>
+            <span className="italic font-serif bg-gradient-to-r from-[#7B61FF] via-[#5C9DFF] to-[#39C3D5] bg-clip-text text-transparent">Projects</span>
           </h2>
           <p className="text-xl md:text-2xl font-light text-white/40 leading-relaxed max-w-xl">
             Engineering real-world systems with total ownership. Designed for users, optimized for impact.

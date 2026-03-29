@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
+import Chatbot from "@/components/Chatbot";
 
 const geistSans = Geist({
   variable: "--font-sans",
@@ -37,6 +38,7 @@ export default function RootLayout({
       <body className="min-h-full bg-black text-white selection:bg-white selection:text-black">
         <SmoothScrollProvider>
           {children}
+          <Chatbot />
         </SmoothScrollProvider>
       </body>
     </html>
