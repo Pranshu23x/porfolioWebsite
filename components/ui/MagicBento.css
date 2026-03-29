@@ -1,0 +1,188 @@
+:root {
+  --hue: 27;
+  --sat: 69%;
+  --white: hsl(0, 0%, 100%);
+  --purple-primary: rgba(132, 0, 255, 1);
+  --purple-glow: rgba(132, 0, 255, 0.2);
+  --purple-border: rgba(132, 0, 255, 0.8);
+  --border-color: #392e4e;
+  --background-dark: #000000;
+  color-scheme: light dark;
+}
+
+.card-grid {
+  display: grid;
+  gap: 1.5rem;
+  padding: 1rem;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.magic-bento-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  padding: 3rem;
+  border-radius: 42px; /* Smooth, large rounding from reference image */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #000000;
+  font-weight: 300;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  --glow-x: 50%;
+  --glow-y: 50%;
+  --glow-intensity: 0;
+  --glow-radius: 400px;
+}
+
+.magic-bento-card:hover {
+  transform: scale(1.01) translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.magic-bento-card__header,
+.magic-bento-card__content {
+  display: flex;
+  position: relative;
+  color: var(--white);
+  z-index: 10;
+}
+
+.magic-bento-card__header {
+  gap: 0.75em;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.magic-bento-card__content {
+  flex-direction: column;
+}
+
+.magic-bento-card__label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.4);
+  font-family: var(--font-mono);
+}
+
+.magic-bento-card__title {
+  font-weight: 300;
+  font-size: 2.5rem;
+  margin: 0 0 1rem;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.magic-bento-card__description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 300;
+}
+
+/* Specific Card Layouts based on Priority */
+
+/* Card 1: HackHarvard (Primary 3x2) */
+.magic-bento-card--primary {
+  grid-column: span 8;
+  grid-row: span 2;
+  min-height: 400px;
+}
+
+.magic-bento-card--primary .magic-bento-card__title {
+  font-size: 6vw;
+  font-style: italic;
+  font-family: var(--font-serif);
+}
+
+/* Card 2: Tech Stack (Secondary 4x1) */
+.magic-bento-card--secondary {
+  grid-column: span 4;
+  grid-row: span 2;
+}
+
+/* Card 3: Education (Tertiary 4x1) */
+.magic-bento-card--tertiary {
+  grid-column: span 12;
+  grid-row: span 1;
+  flex-direction: row;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .magic-bento-card--primary,
+  .magic-bento-card--secondary,
+  .magic-bento-card--tertiary {
+    grid-column: span 1;
+    grid-row: span 1;
+    min-height: 300px;
+  }
+  
+  .magic-bento-card--tertiary {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: 769px) {
+  .card-grid {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+/* Border glow effect */
+.magic-bento-card--border-glow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  background: radial-gradient(
+    var(--glow-radius) circle at var(--glow-x) var(--glow-y),
+    rgba(255, 255, 255, calc(var(--glow-intensity) * 0.4)) 0%,
+    rgba(255, 255, 255, calc(var(--glow-intensity) * 0.2)) 30%,
+    transparent 60%
+  );
+  border-radius: inherit;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  z-index: 5;
+}
+
+.particle::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+/* Global spotlight styles */
+.global-spotlight {
+  mix-blend-mode: color-dodge;
+  will-change: transform, opacity;
+  z-index: 200 !important;
+  pointer-events: none;
+}
