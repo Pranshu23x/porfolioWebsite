@@ -57,8 +57,6 @@ export default function PortfolioContent({ content }: { content: MarkdownContent
             <div className="relative z-20 bg-black border-t border-white/5">
               <Footer
                 name={content.footer.name}
-                label={content.footer.label}
-                links={content.footer.links}
               />
             </div>
           </div>
